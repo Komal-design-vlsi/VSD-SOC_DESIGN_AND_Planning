@@ -1,5 +1,6 @@
 # VSD-SOC_DESIGN_AND_Planning 
-NOTE - THE REPOSITORY IS INCOMPLETE. WORK IN PROGRESS
+NOTE - THE REPOSITORY IS INCOMPLETE. WORK IN PROGRESS.
+
 This repository is an exercise to explore OPENLANE - open-source tool for backend of VLSI design. It uses an example design present in the OPENLANE tool - Picorv32a to go over the backend flow. Create a custom standard cell - Inverter. Characterize the inverter and merge it into the example design picorv32a and run the entire backend flow.
 We will go over-
 1. [A Crash course on VLSI Design Flow:.] (## A Crash course on VLSI Design Flow:)
