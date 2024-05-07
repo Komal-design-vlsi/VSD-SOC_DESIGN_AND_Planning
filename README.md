@@ -1,4 +1,5 @@
-# VSD-SOC_DESIGN_AND_Planning
+# VSD-SOC_DESIGN_AND_Planning 
+NOTE - THE REPOSITORY IS INCOMPLETE. WORK IN PROGRESS
 This repository is an exercise to explore OPENLANE - open-source tool for backend of VLSI design. It uses an example design present in the OPENLANE tool - Picorv32a to go over the backend flow. Create a custom standard cell - Inverter. Characterize the inverter and merge it into the example design picorv32a and run the entire backend flow.
 We will go over-
 1. [A Crash course on VLSI Design Flow:.] (## A Crash course on VLSI Design Flow:)
@@ -97,6 +98,87 @@ Moving on to placement
 
 ![image](https://github.com/Komal-design-vlsi/VSD-SOC_DESIGN_AND_Planning/assets/35945573/e003b610-661b-4f20-a2e5-47daa9ecd1f7)
 
+![image](https://github.com/Komal-design-vlsi/VSD-SOC_DESIGN_AND_Planning/assets/35945573/63faa590-be29-4a90-a569-0ce3c3afc34b)
+
+![image](https://github.com/Komal-design-vlsi/VSD-SOC_DESIGN_AND_Planning/assets/35945573/c6525ae8-cec7-40a2-a5d7-bc6ad884647f)
+
 ## 3. Characterizing a standard cell
+![image](https://github.com/Komal-design-vlsi/VSD-SOC_DESIGN_AND_Planning/assets/35945573/eb7bea38-13b7-4696-94ed-58090240e72b)
+
+![image](https://github.com/Komal-design-vlsi/VSD-SOC_DESIGN_AND_Planning/assets/35945573/3081c06a-2eab-40ab-96f5-36c0a161aff7)
+
+
+![image](https://github.com/Komal-design-vlsi/VSD-SOC_DESIGN_AND_Planning/assets/35945573/7f3fabb8-b53a-4503-8acd-ac5445fc7f6c)
+
+
+![image](https://github.com/Komal-design-vlsi/VSD-SOC_DESIGN_AND_Planning/assets/35945573/3ba49f91-bc68-4758-8925-40d8499b0711)
+
+
+
+![image](https://github.com/Komal-design-vlsi/VSD-SOC_DESIGN_AND_Planning/assets/35945573/f0d4aa4d-dc65-456b-8ee5-34b4d6779e23)
+
+
+![image](https://github.com/Komal-design-vlsi/VSD-SOC_DESIGN_AND_Planning/assets/35945573/35983bc1-fca5-4e50-8238-61e83fd7465c)
+
+
+
+![image](https://github.com/Komal-design-vlsi/VSD-SOC_DESIGN_AND_Planning/assets/35945573/61649038-29bd-463e-8ded-a29b4a23cb99)
+
+Editing config file to add custom inverter
+
+![image](https://github.com/Komal-design-vlsi/VSD-SOC_DESIGN_AND_Planning/assets/35945573/a526e9e5-26f8-4c9a-bbc6-07d4e2f02ac3)
+
+
+## Run Floorplan after adding the inverter
+
+![image](https://github.com/Komal-design-vlsi/VSD-SOC_DESIGN_AND_Planning/assets/35945573/28f81c3d-e813-4fb7-b43d-9e43d2a0f410)
+
+timing
+
+![image](https://github.com/Komal-design-vlsi/VSD-SOC_DESIGN_AND_Planning/assets/35945573/5bcae0d3-daf5-4b58-8c09-7bfcfc11ba17)
+
+# After placement
+
+
+![image](https://github.com/Komal-design-vlsi/VSD-SOC_DESIGN_AND_Planning/assets/35945573/dfcae03c-6910-40c2-8900-1881c4b10992)
+
+
+![image](https://github.com/Komal-design-vlsi/VSD-SOC_DESIGN_AND_Planning/assets/35945573/b7f596f3-283f-4914-8835-08ea5de48537)
+
+# Run_CTS
+Timing after CTS
+
+![image](https://github.com/Komal-design-vlsi/VSD-SOC_DESIGN_AND_Planning/assets/35945573/49be02d1-95a7-413e-848b-3ac6d30fb6cc)
+
+PDN
+
+
+![image](https://github.com/Komal-design-vlsi/VSD-SOC_DESIGN_AND_Planning/assets/35945573/72cc876a-08c8-44f8-9135-76cfc255049f)
+
+# Routing
+
+
+![image](https://github.com/Komal-design-vlsi/VSD-SOC_DESIGN_AND_Planning/assets/35945573/11695ac0-2c1c-415a-8bc9-98668594b61a)
+
+
+![image](https://github.com/Komal-design-vlsi/VSD-SOC_DESIGN_AND_Planning/assets/35945573/0fd67ada-61b2-4228-86aa-886199f28806)
+
+MAGIC View after PNR
+
+![image](https://github.com/Komal-design-vlsi/VSD-SOC_DESIGN_AND_Planning/assets/35945573/2ece5c41-1a88-4cde-8aed-59141041adbb)
+
+
+![image](https://github.com/Komal-design-vlsi/VSD-SOC_DESIGN_AND_Planning/assets/35945573/e323f772-8395-4b21-8443-e6701e6c4673)
+
+
+![image](https://github.com/Komal-design-vlsi/VSD-SOC_DESIGN_AND_Planning/assets/35945573/a437e8eb-daea-4fd5-acc7-1dc4e4f16e37)
+
+
+
+
+
+
+
+
 
 
