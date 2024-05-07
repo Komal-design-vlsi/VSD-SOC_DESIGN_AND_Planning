@@ -1,0 +1,32 @@
+Sun May 05 23:25:14 UTC 2024 - Executing "python3 /openLANE_flow/scripts/extract_metal_layers.py -t /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.ref/sky130_fd_sc_hd/techlef/sky130_fd_sc_hd.tlef -o /openLANE_flow/designs/picorv32a/runs/05-05_23-25/tmp/met_layers_list.txt"
+
+Sun May 05 23:25:14 UTC 2024 - Executing "/openLANE_flow/scripts/mergeLef.py -i /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.ref/sky130_fd_sc_hd/techlef/sky130_fd_sc_hd.tlef {/home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.ref/sky130_fd_sc_hd/lef/sky130_fd_sc_hd.lef /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.ref/sky130_fd_sc_hd/lef/sky130_ef_sc_hd__fill_12.lef /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.ref/sky130_fd_sc_hd/lef/sky130_ef_sc_hd__decap_12.lef /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.ref/sky130_fd_sc_hd/lef/sky130_ef_sc_hd__fakediode_2.lef} -o /openLANE_flow/designs/picorv32a/runs/05-05_23-25/tmp/merged_unpadded.lef |& tee >&@stdout"
+
+Sun May 05 23:25:14 UTC 2024 - Executing "/openLANE_flow/scripts/mergeLef.py -i /openLANE_flow/designs/picorv32a/runs/05-05_23-25/tmp/merged_unpadded.lef /openLANE_flow/designs/picorv32a/src/sky130_inv.lef -o /openLANE_flow/designs/picorv32a/runs/05-05_23-25/tmp/merged_unpadded.lef |& tee >&@stdout"
+
+Sun May 05 23:25:14 UTC 2024 - Executing "/openLANE_flow/scripts/libtrim.pl /openLANE_flow/designs/picorv32a/src/sky130_fd_sc_hd__typical.lib /openLANE_flow/designs/picorv32a/runs/05-05_23-25/tmp/trimmed.lib.exclude.list > /openLANE_flow/designs/picorv32a/runs/05-05_23-25/tmp/trimmed.lib"
+
+Sun May 05 23:25:15 UTC 2024 - Executing "echo {openlane v0.21} > /openLANE_flow/designs/picorv32a/runs/05-05_23-25/OPENLANE_VERSION"
+
+Sun May 05 23:41:23 UTC 2024 - Executing "openroad -exit /openLANE_flow/scripts/openroad/or_replace.tcl |& tee >&@stdout /openLANE_flow/designs/picorv32a/runs/05-05_23-25/logs/placement/11-replace.log"
+
+Sun May 05 23:41:37 UTC 2024 - Executing "openroad -exit /openLANE_flow/scripts/openroad/or_resizer.tcl |& tee >&@stdout /openLANE_flow/designs/picorv32a/runs/05-05_23-25/logs/placement/11-resizer.log"
+
+Sun May 05 23:41:49 UTC 2024 - Executing "openroad -exit /openLANE_flow/scripts/openroad/or_write_verilog.tcl |& tee >&@stdout /openLANE_flow/designs/picorv32a/runs/05-05_23-25/logs/12-write_verilog.log"
+
+Sun May 05 23:41:50 UTC 2024 - Executing "sed -i -e {s/\(set ::env(CURRENT_NETLIST)\).*/\1 \/openLANE_flow\/designs\/picorv32a\/runs\/05-05_23-25\/results\/synthesis\/picorv32a.synthesis_optimized.v/} /openLANE_flow/designs/picorv32a/runs/05-05_23-25/config.tcl"
+
+Sun May 05 23:41:50 UTC 2024 - Executing "sed -i -e {s/\(set ::env(PREV_NETLIST)\).*/\1 \/openLANE_flow\/designs\/picorv32a\/runs\/05-05_23-08\/results\/synthesis\/picorv32a.synthesis.v/} /openLANE_flow/designs/picorv32a/runs/05-05_23-25/config.tcl"
+
+Sun May 05 23:41:51 UTC 2024 - Executing "sta /openLANE_flow/scripts/sta.tcl |& tee >&@stdout /openLANE_flow/designs/picorv32a/runs/05-05_23-25/logs/synthesis/13-opensta_post_resizer"
+
+Sun May 05 23:41:52 UTC 2024 - Executing "openroad -exit /openLANE_flow/scripts/openroad/or_opendp.tcl |& tee >&@stdout /openLANE_flow/designs/picorv32a/runs/05-05_23-25/logs/placement/14-opendp.log"
+
+Sun May 05 23:41:55 UTC 2024 - Executing "bash /openLANE_flow/scripts/klayout/scrotLayout.sh /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.tech/klayout/sky130A.lyt /openLANE_flow/designs/picorv32a/runs/05-05_23-25/results/placement/picorv32a.placement.def |& tee >&@stdout /openLANE_flow/designs/picorv32a/runs/05-05_23-25/logs/klayout/15-klayout.scrot.log"
+
+Mon May 06 00:19:16 UTC 2024 - Executing "openroad -exit /openLANE_flow/scripts/openroad/or_replace.tcl |& tee >&@stdout /openLANE_flow/designs/picorv32a/runs/05-05_23-25/logs/placement/16-replace.log"
+
+Mon May 06 00:20:10 UTC 2024 - Executing "openroad -exit /openLANE_flow/scripts/openroad/or_replace.tcl |& tee >&@stdout /openLANE_flow/designs/picorv32a/runs/05-05_23-25/logs/placement/17-replace.log"
+
+Mon May 06 00:20:47 UTC 2024 - Executing "openroad -exit /openLANE_flow/scripts/openroad/or_floorplan.tcl |& tee >&@stdout /openLANE_flow/designs/picorv32a/runs/05-05_23-25/logs/floorplan/18-verilog2def.openroad.log"
+

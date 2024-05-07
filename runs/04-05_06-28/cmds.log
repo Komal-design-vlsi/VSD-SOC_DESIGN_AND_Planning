@@ -1,0 +1,12 @@
+Sat May 04 06:28:57 UTC 2024 - Executing "python3 /openLANE_flow/scripts/extract_metal_layers.py -t /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.ref/sky130_fd_sc_hd/techlef/sky130_fd_sc_hd.tlef -o /openLANE_flow/designs/picorv32a/runs/04-05_06-28/tmp/met_layers_list.txt"
+
+Sat May 04 06:28:57 UTC 2024 - Executing "/openLANE_flow/scripts/mergeLef.py -i /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.ref/sky130_fd_sc_hd/techlef/sky130_fd_sc_hd.tlef {/home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.ref/sky130_fd_sc_hd/lef/sky130_fd_sc_hd.lef /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.ref/sky130_fd_sc_hd/lef/sky130_ef_sc_hd__fill_12.lef /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.ref/sky130_fd_sc_hd/lef/sky130_ef_sc_hd__decap_12.lef /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.ref/sky130_fd_sc_hd/lef/sky130_ef_sc_hd__fakediode_2.lef} -o /openLANE_flow/designs/picorv32a/runs/04-05_06-28/tmp/merged_unpadded.lef |& tee >&@stdout"
+
+Sat May 04 06:28:57 UTC 2024 - Executing "/openLANE_flow/scripts/libtrim.pl /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__tt_025C_1v80.lib /openLANE_flow/designs/picorv32a/runs/04-05_06-28/tmp/trimmed.lib.exclude.list > /openLANE_flow/designs/picorv32a/runs/04-05_06-28/tmp/trimmed.lib"
+
+Sat May 04 06:28:57 UTC 2024 - Executing "echo {openlane v0.21} > /openLANE_flow/designs/picorv32a/runs/04-05_06-28/OPENLANE_VERSION"
+
+Sat May 04 06:51:28 UTC 2024 - Executing "openroad -exit /openLANE_flow/scripts/openroad/or_replace.tcl |& tee >&@stdout /openLANE_flow/designs/picorv32a/runs/04-05_06-28/logs/placement/1-replace.log"
+
+Sat May 04 06:51:29 UTC 2024 - Executing "python3 /openLANE_flow/report_generation_wrapper.py -d /openLANE_flow/designs/picorv32a -dn picorv32a -t 04-05_06-28 -o /openLANE_flow/designs/picorv32a/runs/04-05_06-28/reports/final_summary_report.csv -m /openLANE_flow/designs/picorv32a/runs/04-05_06-28/reports/manufacturability_report.rpt -rs /openLANE_flow/designs/picorv32a/runs/04-05_06-28/reports/runtime_summary_report.rpt -r /openLANE_flow/designs/picorv32a/runs/04-05_06-28"
+
