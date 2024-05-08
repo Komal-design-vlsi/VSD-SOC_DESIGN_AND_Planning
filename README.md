@@ -1,7 +1,7 @@
 # VSD-SOC_DESIGN_AND_Planning 
 NOTE - THE REPOSITORY IS INCOMPLETE. WORK IN PROGRESS.
 
-This repository is an exercise to explore OPENLANE - open-source tool for backend of VLSI design. It uses an example design present in the OPENLANE tool - Picorv32a to go over the backend flow. Create a custom standard cell - Inverter. Characterize the inverter and merge it into the example design picorv32a and run the entire backend flow.
+This repository is an exercise to explore OPENLANE - an open-source tool for backend of VLSI design. It uses an example design present in the OPENLANE tool - Picorv32a to go over the backend flow. Create a custom standard cell - Inverter. Characterize the inverter and merge it into the example design picorv32a and run the entire backend flow.
 We will go over-
 1. [A Crash course on VLSI Design Flow:.] (## A Crash course on VLSI Design Flow:)
 2. Exploring OPENLANE- Getting familiar with the tool
@@ -59,8 +59,15 @@ To start openlane :-
 - `prep -design picorv32a`    we are using the RISCV processor example present in the design directory. This statement tells the tool we are working on picorv32a
   
   ![image](https://github.com/Komal-design-vlsi/VSD-SOC_DESIGN_AND_Planning/assets/35945573/308923d7-287c-4061-a7eb-2632d335790d)
-
+# SYNTHESIS
 `run_synthesis`
+Openlane uses Yosys to run sythesis. Here the behavioral RTL code gets converted into gate level RTL. Which can be used for floorplan and placement.
+The input to the Synthesis stage is an RTL file. In this example, I am using picorv32a.v saved in /designs/picorv32a/src/picorv32a.v
+The output is a synthesis netlist that gets created in the runs folder. In this case that would be /picorv32a/runs/06-05_00-21/results/synthesis/picorv32a.synthesis.v.
+After the netlist is generated we perform STA to get a positive slack.
+
+
+# Floorplan
 `run_floorplan`
 
 Finding the ratio of D Flip Flops to the number of cells - 1656/14876 = 0.11
@@ -80,17 +87,18 @@ To see the die in the magic GUI, we need to open the tool outside the docker
 - 
 ![image](https://github.com/Komal-design-vlsi/VSD-SOC_DESIGN_AND_Planning/assets/35945573/9405eb1d-f591-4e65-b375-b257f91caf01)
 
-A few Magic hot keys
-V to center the layout
-Z to zoom in
-X to expand
-S to select objects
+- `A` few Magic hotkeys.
+- `V` to center the layout.
+- `Z` to zoom in.
+- `X` to expand.
+- `S` to select objects.
 
 ![image](https://github.com/Komal-design-vlsi/VSD-SOC_DESIGN_AND_Planning/assets/35945573/c1c3132f-b0d8-4f62-9fd9-512162346f75)
 
 ![image](https://github.com/Komal-design-vlsi/VSD-SOC_DESIGN_AND_Planning/assets/35945573/29780d9a-1a84-43ca-95a7-ac4b1686a99a)
 
 We have verified the floorplan was successful
+# Placement
 
 Moving on to placement
 `run_placement`
@@ -104,13 +112,34 @@ Moving on to placement
 ![image](https://github.com/Komal-design-vlsi/VSD-SOC_DESIGN_AND_Planning/assets/35945573/c6525ae8-cec7-40a2-a5d7-bc6ad884647f)
 
 ## 3. Characterizing a standard cell
+
+I have used a custom std cell layout provided in this repository.
+https://github.com/nickson-jose/vsdstdcelldesign/blob/master/README.md
+
+I have git cloned this repository in my picorv32a directory.
+
+My goal is to characterize my std cell:
+I begin by defining my input and output ports along with the type of port.
+I am using the tkcon to execute the commands as shown below.
+
+[image credit - https://raw.githubusercontent.com/nickson-jose/vsdstdcelldesign/master/Images/port_class_use_1.JPG]
+
+Once the ports and pins are defined, I move on to extracting and editing the spice file.
+
+![image](https://github.com/Komal-design-vlsi/VSD-SOC_DESIGN_AND_Planning/assets/35945573/cc48ce4c-b46f-4cde-9005-7282aa78e71f)
+
+
 ![image](https://github.com/Komal-design-vlsi/VSD-SOC_DESIGN_AND_Planning/assets/35945573/eb7bea38-13b7-4696-94ed-58090240e72b)
 
+Setting the scale to match the scale on the layout.
 ![image](https://github.com/Komal-design-vlsi/VSD-SOC_DESIGN_AND_Planning/assets/35945573/3081c06a-2eab-40ab-96f5-36c0a161aff7)
+
+I am running the spice simulations outside the docker using ngspice.
 
 
 ![image](https://github.com/Komal-design-vlsi/VSD-SOC_DESIGN_AND_Planning/assets/35945573/7f3fabb8-b53a-4503-8acd-ac5445fc7f6c)
 
+Measuring rise time and propagation delay using `tmeas`.
 
 ![image](https://github.com/Komal-design-vlsi/VSD-SOC_DESIGN_AND_Planning/assets/35945573/3ba49f91-bc68-4758-8925-40d8499b0711)
 
@@ -121,7 +150,7 @@ Moving on to placement
 
 ![image](https://github.com/Komal-design-vlsi/VSD-SOC_DESIGN_AND_Planning/assets/35945573/35983bc1-fca5-4e50-8238-61e83fd7465c)
 
-
+editing the grid size
 
 ![image](https://github.com/Komal-design-vlsi/VSD-SOC_DESIGN_AND_Planning/assets/35945573/61649038-29bd-463e-8ded-a29b4a23cb99)
 
@@ -130,34 +159,33 @@ Editing config file to add custom inverter
 ![image](https://github.com/Komal-design-vlsi/VSD-SOC_DESIGN_AND_Planning/assets/35945573/a526e9e5-26f8-4c9a-bbc6-07d4e2f02ac3)
 
 
-## Run Floorplan after adding the inverter
+## Run Synthesis after adding the inverter
+`run_synthesis`
 
 ![image](https://github.com/Komal-design-vlsi/VSD-SOC_DESIGN_AND_Planning/assets/35945573/28f81c3d-e813-4fb7-b43d-9e43d2a0f410)
 
-timing
-
 ![image](https://github.com/Komal-design-vlsi/VSD-SOC_DESIGN_AND_Planning/assets/35945573/5bcae0d3-daf5-4b58-8c09-7bfcfc11ba17)
 
-# After placement
-
+# Placement
+`run_placement`
 
 ![image](https://github.com/Komal-design-vlsi/VSD-SOC_DESIGN_AND_Planning/assets/35945573/dfcae03c-6910-40c2-8900-1881c4b10992)
 
-
+# Run_CTS
 ![image](https://github.com/Komal-design-vlsi/VSD-SOC_DESIGN_AND_Planning/assets/35945573/b7f596f3-283f-4914-8835-08ea5de48537)
 
-# Run_CTS
+
 Timing after CTS
+`run_cts`
 
 ![image](https://github.com/Komal-design-vlsi/VSD-SOC_DESIGN_AND_Planning/assets/35945573/49be02d1-95a7-413e-848b-3ac6d30fb6cc)
 
-PDN
-
-
+# PDN
+`gen_pdn`
 ![image](https://github.com/Komal-design-vlsi/VSD-SOC_DESIGN_AND_Planning/assets/35945573/72cc876a-08c8-44f8-9135-76cfc255049f)
 
 # Routing
-
+`run_routing`
 
 ![image](https://github.com/Komal-design-vlsi/VSD-SOC_DESIGN_AND_Planning/assets/35945573/11695ac0-2c1c-415a-8bc9-98668594b61a)
 
